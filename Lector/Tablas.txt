@@ -1,0 +1,30 @@
+//Tabla de Lectores
+CREATE TABLE public.lectores
+(
+  numero_lector integer NOT NULL DEFAULT nextval('lectores_numero_lector_seq'::regclass),
+  nombre character varying(39),
+  telefono character varying(13),
+  direccion character varying(50),
+  CONSTRAINT lectores_pkey PRIMARY KEY (numero_lector)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.lectores
+  OWNER TO postgres;
+
+//Tabla de Estudiantes
+CREATE TABLE public.estudiantes
+(
+  id_estudiante integer NOT NULL DEFAULT nextval('estudiantes_id_estudiante_seq'::regclass),
+  nombre character varying(50),
+  apellidos character varying(50),
+  curso character varying(50),
+  anio integer,
+  CONSTRAINT estudiantes_pkey PRIMARY KEY (id_estudiante)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.estudiantes
+  OWNER TO postgres;
