@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<h:head></h:head>
+	<body>
+		<h1>Instrument</h1>
+		
+		<h:form id="frmInstrument">
+			Instrument: <h:inputText value="#{instrumentController.instrument.name}" />
+			Description: <h:inputText value="#{instrumentController.instrument.description}" />
+						
+		<h:commandButton action="#{instrumentController.save}" value="Save" >
+		<f:ajax execute="frmInstrument" render="frmInstrument"/>
+		</h:commandButton>
+		
+		<h:commandButton rendered="#{instrumentController.editMode}" 
+			action="#{instrumentController.save}" value="Cancel" >
+			<f:ajax render="frmInstrument"></f:ajax>
+		</h:commandButton>
+		
+		<h:dataTable value="#{instrumentController.instruments}" var="i"
+		id="dtInstrument">
+			<h:column>
+			<f:facet name="header">ID</f:facet>
+				#{i.id}
+			</h:column>
+			<h:column>
+			<f:facet name="header">Name</f:facet>
+				#{i.name}
+			</h:column>
+			<h:column>
+			<f:facet name="header">Description</f:facet>
+				#{i.description}
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">Actions</f:facet>
+				<h:commandButton action="#{instrumentController.delete(i)}"
+				 value="Delete"
+				 onclick="return window.confirm
+					 ('Are you sure?')" >
+					<f:ajax render="frmInstrument:dtInstrument"/>
+				</h:commandButton>
+				<h:commandButton action="#{instrumentController.update(i)}"
+				 value="Update" >
+				 	<f:ajax render="frmInstrument"/>
+				 </h:commandButton>
+			</h:column>
+		</h:dataTable>
+						
+		</h:form>
+	</body>
+</html>
