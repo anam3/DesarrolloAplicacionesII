@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Clase de Persona</string>
+    <string name="name">Nombre de la Persona</string>
+    <string name="boton1">Mostrar datos de la Persona</string>
+    <string name="resultado">Datos de la Persona</string>
+    <string name="mujer">Mujer</string>
+    <string name="hombre">Hombre</string>
+    <string name="ejercicio">Realiza Ejercicio Diariamente</string>
+    <string name="estatura">Estatura en metros</string>
+    <string name="peso">Peso en Kgs</string>
+    <string name="boton2">Limpiar Datos</string>
+    <string name="boton3">Recomendación</string>
+    <string name="boton4">Acerca de..</string>
+    <string name="acercade">Ana Cristina Alamilla Martínez..
+                            Desarrollo de Aplicaciones II...
+                            UTNG</string>
+    <string name="btnRegresar">Regresar</string>
+</resources>
